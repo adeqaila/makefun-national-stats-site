@@ -1,0 +1,59 @@
+:root {
+  --ink: #1c2420; --muted: #5a6a63; --paper: #f7f6f2; --card: #fff;
+  --teal: #0b5e4b; --teal-dark: #0a3d31; --teal-soft: #e4efe9; --gold: #b97f14;
+  --line: #dde4df; --red: #b3402a; --violet: #7a4a9e;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 16.5px/1.6 system-ui, -apple-system, sans-serif; }
+.topbar { background: var(--teal-dark); color: #fff; padding: 0 20px; display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+.brand { color: #fff; text-decoration: none; font-weight: 800; font-size: 19px; padding: 14px 0; white-space: nowrap; }
+nav { display: flex; flex-wrap: wrap; }
+nav a { color: #cfe0d8; text-decoration: none; font-size: 14.5px; font-weight: 600; padding: 14px 11px; border-bottom: 3px solid transparent; }
+nav a:hover { color: #fff; }
+nav a.active { color: #fff; border-bottom-color: var(--gold); }
+main { max-width: 980px; margin: 0 auto; padding: 28px 20px 40px; }
+h1 { font-size: 34px; line-height: 1.15; margin: 0 0 8px; }
+h2 { font-size: 22px; margin: 28px 0 8px; }
+.kicker { font-size: 13px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); }
+.lede { color: var(--muted); font-size: 18px; max-width: 760px; }
+.crumbs { font-size: 13px; color: var(--muted); margin-bottom: 10px; }
+.crumbs a { color: var(--teal); }
+.keygrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 22px 0; }
+.key { background: var(--card); border: 1px solid var(--line); border-left: 5px solid var(--teal); padding: 16px; }
+.key .v { font-size: 28px; font-weight: 800; letter-spacing: -.01em; }
+.key .l { font-weight: 700; font-size: 14px; margin-top: 2px; }
+.key .s { font-size: 12px; color: var(--muted); margin-top: 6px; }
+.panel { background: var(--card); border: 1px solid var(--line); padding: 18px 20px; margin: 18px 0; }
+.panel h3 { margin: 0 0 4px; font-size: 18px; }
+.src { font-size: 12.5px; color: var(--muted); margin: 10px 0 0; }
+table { border-collapse: collapse; width: 100%; font-size: 15px; }
+th, td { padding: 8px 10px; border-bottom: 1px solid var(--line); text-align: left; }
+th { background: var(--teal-soft); font-size: 12.5px; text-transform: uppercase; letter-spacing: .04em; }
+td.num { text-align: right; font-variant-numeric: tabular-nums; }
+.bar { height: 10px; background: var(--teal); border-radius: 5px; }
+.note { background: #fdf6e3; border-left: 4px solid var(--gold); padding: 12px 16px; margin: 18px 0; font-size: 15px; }
+.topic-list { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 20px 0; }
+.topic { background: var(--card); border: 1px solid var(--line); padding: 16px 18px; text-decoration: none; color: inherit; display: block; }
+.topic:hover { border-color: var(--teal); }
+.topic h3 { margin: 0 0 4px; color: var(--teal); font-size: 18px; }
+.topic p { margin: 0; color: var(--muted); font-size: 14.5px; }
+.controls { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 14px 0; }
+.controls label { display: block; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); margin-bottom: 6px; }
+select, input[type="range"] { width: 100%; font: inherit; padding: 9px 10px; border: 1px solid var(--line); border-radius: 6px; background: #fff; }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
+.seg button { border: 0; background: #fff; padding: 9px 14px; font: 600 14px system-ui, sans-serif; cursor: pointer; color: var(--ink); }
+.seg button[aria-pressed="true"] { background: var(--teal); color: #fff; }
+.btn { display: inline-block; background: var(--teal); color: #fff; border: 0; padding: 10px 16px; border-radius: 6px; font: 600 14.5px system-ui, sans-serif; cursor: pointer; text-decoration: none; }
+.btn:hover { background: var(--teal-dark); }
+.readout { display: flex; gap: 18px; flex-wrap: wrap; margin: 10px 0; font-size: 15px; }
+.readout b { font-size: 20px; }
+.readout .second b { color: var(--violet); }
+a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+details summary { cursor: pointer; font-weight: 600; }
+footer { max-width: 980px; margin: 0 auto; padding: 22px 20px 40px; color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); }
+@media (max-width: 680px) {
+  .keygrid, .topic-list, .controls { grid-template-columns: 1fr; }
+  h1 { font-size: 27px; }
+  nav a { padding: 10px 8px; font-size: 13.5px; }
+  .col-bar { display: none; }
+}
